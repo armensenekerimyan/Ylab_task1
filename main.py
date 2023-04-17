@@ -7,6 +7,8 @@ def test_ylab_page():
     driver = get_driver()
 
     driver.get(base_url)
+    driver.implicitly_wait(10)
+    driver.maximize_window()
 
     click_on(driver, by_xpath, proj)
     click_on(driver, by_css, all_stacks)
