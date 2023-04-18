@@ -1,7 +1,6 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait as wdw
-from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver import Chrome
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait as wdw
 
 
 def get_driver():
@@ -18,5 +17,5 @@ def validate_text(expected_result, actual_result):
     assert actual_result == expected_result, f"Expected result: {expected_result}, Actual result: {actual_result}"
 
 
-def get_description(driver):
-    return wdw(driver, 10).until(ec.visibility_of_element_located((By.XPATH, "(//p)[2]"))).text
+def get_description(driver, by):
+    return wdw(driver, 10).until(ec.visibility_of_element_located((by, "(//p)[2]"))).text

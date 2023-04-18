@@ -20,7 +20,7 @@ def test_ylab_page():
                        "взыскание дебиторской задолженности и прочие."
 
     time.sleep(2)
-    description = get_description(driver)
+    description = get_description(driver, by_xpath)
     validate_text(description_body, description)
 
     driver.close()
